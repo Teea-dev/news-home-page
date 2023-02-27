@@ -1,0 +1,225 @@
+.Navbar {
+  background-color: #fff !important;
+  display: none;
+  &Content {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+
+
+    &Header {
+      padding: 1em 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (max-width: 768px) {
+        justify-content: space-between;
+      }
+
+      h2 {
+        
+        color: #ffffff;
+      }
+
+      .hamburger {
+        position: relative;
+        display: none;
+        right: 20px;
+        z-index: 2000;
+
+        @media screen and (max-width: 768px) {
+          display: block;
+          right: 0;
+        }
+
+        label {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &_bars {
+          height: 3px;
+          width: 35px;
+          border-radius: 40px;
+          display: inline-block;
+          background-color: hsl(240, 100%, 5%);
+          margin: 2.5px 0;
+          cursor: pointer;
+          transition: all 0.3s linear;
+        }
+
+        &_check {
+          position: fixed;
+          margin: 0;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          transform: translateX(99999px);
+
+          &:checked + label {
+            & .hamburger_bars:nth-of-type(1) {
+              transform: rotate(45deg);
+            }
+            & .hamburger_bars:nth-of-type(2) {
+              opacity: 0;
+            }
+            & .hamburger_bars:nth-of-type(3) {
+              position: absolute;
+              top: 1px;
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1.5px solid #e8ebee;
+    border-right: 0;
+    border-left: 0;
+    margin: 0;
+
+    li {
+      font-weight: 500;
+      padding: 1em 0;
+      flex: auto;
+      text-align: center;
+      color: #ffffff;
+      background:#070724;
+      transition: background-size 350ms;
+
+      &:where(:hover, :focus-visible) {
+        background-size: 100% var(--bg-h);
+        background-position-x: left;
+      }
+      --bg-h: 2px;
+
+      a {
+        text-decoration: none;
+      }
+
+      &.activeNav {
+        background: linear-gradient(0deg, white, white) no-repeat right bottom /
+          0 var(--bg-h);
+        background-size: 100% var(--bg-h);
+        background-position-x: left;
+      }
+    }
+  }
+
+  &Solid {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+
+    ul {
+      border-bottom: none;
+
+      li {
+        color: #778797;
+      }
+
+      .activeNav {
+        background-color: #039341 !important;
+        color: #ffffff;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+    background-color: #ffffff;
+    width: 100%;
+    background-color: #ffffff;
+    top: 0;
+    z-index: 100;
+    position: fixed;
+    overflow-y: scroll;
+    max-height: 100%;
+
+    ul {
+      top: 0;
+      padding: 1em 0;
+      border: none;
+      flex-direction: column;
+      height: max-content;
+      overflow-y: auto;
+
+      &.visibleNav {
+        display: block;
+      }
+
+      &.inVisibleNav {
+        display: none;
+      }
+
+      li {
+        width: 100%;
+        padding: 0;
+        text-align: left;
+        color: red;
+        border-bottom: 1px solid #e6e6e6;
+        background: linear-gradient(0deg, #039341, #039341) no-repeat right
+          bottom / 0 var(--bg-h);
+        transition: background-size 350ms;
+
+        &:nth-last-of-type(1) {
+          border-bottom: none;
+        }
+
+        span {
+          display: block;
+          width: 100%;
+          padding: 1.5em;
+          color: #778797;
+
+          &:hover {
+            color: #039341;
+          }
+        }
+      }
+
+      .activeNav {
+        a {
+          color: #039341;
+        }
+
+        background-color: #ffffff !important;
+      }
+    }
+  }
+  @media screen and (max-width:480px) {
+    display: block;
+  }
+}
+
+
+
+
+// div{
+// 	position: relative;
+//     border-bottom: 1px solid red;
+//     padding: 0 .25em .25em 2em;
+// 	width: 100%;
+
+// 	&:before{
+// 		content: '';
+//         position: absolute;
+//       top: .1em;
+//       left: .5em;
+//       width: 15px;
+//       height: 15px;
+//       border-radius: 50%;
+//       background-color: red;
+// 	}
+// }
+ 
