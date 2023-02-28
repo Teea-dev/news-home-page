@@ -1,3 +1,10 @@
+@font-face {
+  font-family: regularInter;
+  src: url("assets/fonts/static/Inter-Regular.ttf");
+}
+
+
+
 .Navbar {
   background-color: #fff !important;
   display: none;
@@ -90,6 +97,7 @@
     margin: 0;
 
     li {
+      font-family: regularInter;
       font-weight: 500;
       padding: 1em 0;
       flex: auto;
