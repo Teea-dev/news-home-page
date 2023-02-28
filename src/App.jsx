@@ -12,7 +12,7 @@ import Navbar from "./Navbar/Navbar";
 function App() {
   return (
     <div className="App">
-      <Navbar className='mobilenav' />
+      <Navbar className="mobilenav" />
       <div className="nav">
         <div className="logo">
           <img src={logo} className="logo" alt="" />
@@ -47,12 +47,18 @@ function App() {
         <div className="item items--4">
           <h2>New</h2>
           <div>
-            <h3>Hydrogen vs Electric cars</h3>
-            <p>Will hydrogen fueled cars ever catch up with EVs?</p>
-            <hr />
-            <h3>The Downside Of AI Artistry</h3>
-            <p>What are the possible adverse effects of AI image generation?</p>
-            <hr />
+            <div className="sidesection">
+              <h3>Hydrogen vs Electric cars</h3>
+              <p>Will hydrogen fueled cars ever catch up with EVs?</p>
+            </div>
+
+            <div className="sidesection">
+              <h3>The Downside Of AI Artistry</h3>
+              <p>
+                What are the possible adverse effects of AI image generation?
+              </p>
+            </div>
+
             <h3>IS VC Funding Drying Up?</h3>
             <p>
               Private funding by VC firm is down 50% YOY.We take a look at what
@@ -71,24 +77,25 @@ function App() {
           </span>
         </div>
         <div className="item items--6">
-          <span>
+          <div>
             <img src={laptopkeys} className="laptopkeys" alt="" />
-          </span>
-          <span>
+          </div>
+          <div>
             <h2>02</h2>
             <h3>Top 10 laptops of 2022</h3>
             <p>Our best picks for various needs and budgets</p>
-          </span>
+          </div>
         </div>
         <div className="item items--7">
-          <span>
+          <div>
             <img src={gaming} className="gaming" alt="" />
-          </span>
-          <span>
+          </div>
+
+          <div>
             <h2>03</h2>
             <h3>The Growth Of Gaming</h3>
             <p>How the pandemic has sparked fresh opportunities</p>
-          </span>
+          </div>
         </div>
       </div>
     </div>
